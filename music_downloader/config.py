@@ -1,0 +1,2 @@
+DOWNLOAD_DIR = "musics"
+DEFAULT_FORMAT = "mp3"
