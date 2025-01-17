@@ -1,2 +1,2 @@
 .venv
-delete.py
+__pycache__
