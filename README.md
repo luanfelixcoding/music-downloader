@@ -84,10 +84,4 @@ Run unit tests to ensure everything works as expected:
 pytest tests/
 ```
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
 Feel free to reach out if you encounter any issues or have suggestions for improvement. Happy downloading!
