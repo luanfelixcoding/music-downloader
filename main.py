@@ -1,7 +1,6 @@
 from music_downloader.utils import format_song_list
 from music_downloader.downloader import download_music
 from termcolor import colored
-# import subprocess
 
 
 def main():
@@ -14,7 +13,6 @@ def main():
     except ValueError as value_error:
         print(colored(f"\nInput error: {value_error}", "light_red"))
     except KeyboardInterrupt:
-        # subprocess.run('cls', shell=True)
         print(colored("\nProgram finished by the user", "light_red"))
     except Exception as unknown_error:
         print(colored(f"\nAn unexpected error occurred: {
