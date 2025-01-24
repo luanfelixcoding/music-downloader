@@ -1,4 +1,4 @@
-2. **Run the Main file**:
+# Music Downloader
 
 Music Downloader is a Python-based tool for downloading music from YouTube using the `yt_dlp` program. This project simplifies the process of downloading and organizing audio files, providing features like file management, configuration customization, and utility functions for seamless integration.
 
@@ -83,11 +83,5 @@ Run unit tests to ensure everything works as expected:
 ```bash
 pytest tests/
 ```
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 Feel free to reach out if you encounter any issues or have suggestions for improvement. Happy downloading!
