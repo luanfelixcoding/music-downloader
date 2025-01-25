@@ -16,7 +16,7 @@ Music Downloader is a Python-based tool for downloading music from YouTube using
 music_downloader/
 ├── music_downloader/
 │   ├── __init__.py          # Package initialization
-│   ├── config.py            # Configuration settings
+│   ├── config.py            # Configuration and progress hook logic
 │   ├── downloader.py        # Core downloading functionality
 │   ├── file_manager.py      # File management utilities
 │   └── utils.py             # Helper functions
@@ -24,9 +24,11 @@ music_downloader/
 │   ├── __init__.py          # Test package initialization
 │   ├── test_downloader.py   # Unit tests for downloader.py
 │   └── test_file_manager.py # Unit tests for file_manager.py
-├── requirements.txt          # Python dependencies
-├── README.md                 # Project documentation
-└── main.py                   # Main Package to run the script
+├── logs/
+│   └── downloader.log       # Logs for debugging and tracking issues 
+├── requirements.txt         # Python dependencies
+├── README.md                # Project documentation
+└── main.py                  # Main entry point of the application
 ```
 
 ## Installation
