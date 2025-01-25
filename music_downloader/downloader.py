@@ -1,6 +1,5 @@
 from .config import YDL_OPTS, DOWNLOAD_DIR
 from .file_manager import ensure_folder_exists
-from termcolor import colored
 import yt_dlp
 import logging
 
@@ -10,7 +9,7 @@ logger = logging.getLogger(__name__)
 def progress_hook(d: dict) -> None:
     """Handles download progress."""
     if d['status'] == 'downloading':
-        total_bytes = d.get('total_bytes', d.get('total_bytes_estimate', 0))
+        total_bytes = d.get('total_bytes') or d.get('total_bytes_estimate', 0)
         downloaded_bytes = d.get('downloaded_bytes', 0)
         speed = d.get('speed', 0)
         eta = d.get('eta', 0)
@@ -46,7 +45,7 @@ def download_music(song_names: list) -> None:
         try:
             logger.info(f"Starting download for '{song}'...")
             yt_search = f"ytsearch:{song}"
-            with yt_dlp.YoutubeDL(YDL_OPTS) as ydl:
+            with yt_dlp.YoutubeDL(ydl_opts_with_hooks) as ydl:
                 ydl.download([yt_search])
                 logger.info(f"'{song}' downloaded successfully!")
         except yt_dlp.utils.DownloadError as download_error:

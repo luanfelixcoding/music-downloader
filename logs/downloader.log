@@ -1,0 +1,4 @@
+2025-01-25 11:22:35,889 - INFO - Folder checked/created at: C:\Users\ghost\Desktop\musics
+2025-01-25 11:22:35,890 - INFO - Starting download for 'without me eminem'...
+2025-01-25 11:22:41,186 - WARNING - Error in progress calculation: unsupported operand type(s) for /: 'NoneType' and 'int'
+2025-01-25 11:22:47,939 - INFO - 'without me eminem' downloaded successfully!
