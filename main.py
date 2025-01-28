@@ -1,36 +1,31 @@
 from music_downloader.utils import format_song_list
-from music_downloader.downloader import download_music
+from music_downloader.downloader import MusicDownloader
+from music_downloader.logger import setup_logger
 from termcolor import colored
-import logging
+import asyncio
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler('logs/downloader.log'),
-        logging.StreamHandler(),
-    ]
-)
+logger = setup_logger()
 
 
-def main():
-    """Main function to handle user input and song downloading."""
+async def main() -> None:
+    """Main entry point of the application"""
     try:
-        songs = input(
-            "Enter the names of the songs (comma-separated): ").strip()
+        songs = input("Enter song names (comma-separated): ").strip()
         if not songs:
-            raise ValueError("The song list cannot be empty")
+            raise ValueError("No songs provided")
         song_list = format_song_list(songs)
-        download_music(song_list)
-    except ValueError as value_error:
-        print(colored(f"\nInput error: {value_error}", "light_red"))
+        downloader = MusicDownloader()
+        await downloader.download_songs(song_list)
+    except ValueError as ve:
+        logger.error(ve)
+        print(colored(f"Error: {ve}", "light_red"))
     except KeyboardInterrupt:
-        print(colored("\nProgram finished by the user", "light_red"))
+        logger.info("Program interrupted by user.")
+        print(colored(f"Program interrupted by user.", "light_yellow"))
     except Exception as unknown_error:
-        print(colored(f"\nAn unexpected error occurred: {
-              unknown_error}", "light_red"))
+        logger.error(f"Unexpected error: {unknown_error}")
+        print(colored(f"Unexpected error: {unknown_error}", "light_red"))
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    asyncio.run(main())

@@ -1,3 +1,5 @@
+
+
 # Music Downloader
 
 Music Downloader is a Python-based tool for downloading music from YouTube using the `yt_dlp` program. This project simplifies the process of downloading and organizing audio files, providing features like file management, configuration customization, and utility functions for seamless integration.
@@ -16,36 +18,40 @@ Music Downloader is a Python-based tool for downloading music from YouTube using
 music_downloader/
 ├── music_downloader/
 │   ├── __init__.py          # Package initialization
-│   ├── config.py            # Configuration and progress hook logic
-│   ├── downloader.py        # Core downloading functionality
+│   ├── config.py            # Configuration settings
+│   ├── downloader.py        # Core downloading functionality and class
 │   ├── file_manager.py      # File management utilities
+│   ├── logger.py            # Centralized logging setup
 │   └── utils.py             # Helper functions
 ├── tests/
 │   ├── __init__.py          # Test package initialization
 │   ├── test_downloader.py   # Unit tests for downloader.py
-│   └── test_file_manager.py # Unit tests for file_manager.py
+│   ├── test_file_manager.py # Unit tests for file_manager.py
+│   └── test_utils.py        # Unit tests for utils.py
 ├── logs/
 │   └── downloader.log       # Logs for debugging and tracking issues 
-├── requirements.txt         # Python dependencies
+├── main.py                  # Main entry point of the application
 ├── README.md                # Project documentation
-└── main.py                  # Main entry point of the application
+└── requirements.txt         # Python dependencies
 ```
 
 ## Installation
 
-1. **Clone the Repository**
+1. **Install FFmpeg on [oficial site](https://ffmpeg.org/download.html) or you can watch this [video](https://www.youtube.com/watch?v=4jx2_j5Seew)**
+ 
+2. **Clone the Repository:**
    ```bash
    git clone https://github.com/luanfelixcoding/music-downloader.git
    cd music_downloader
    ```
 
-2. **Create and Activate a Virtual Environment** (optional but recommended):
+3. **Create and Activate a Virtual Environment** (optional but recommended):
    ```bash
    python -m venv venv
    venv/Scripts/activate   # On Linux/Mac: source venv/bin/activate
    ```
 
-3. **Install Dependencies**:
+4. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
