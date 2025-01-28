@@ -1,5 +1,3 @@
-
-
 # Music Downloader
 
 Music Downloader is a Python-based tool for downloading music from YouTube using the `yt_dlp` program. This project simplifies the process of downloading and organizing audio files, providing features like file management, configuration customization, and utility functions for seamless integration.
@@ -75,13 +73,13 @@ Modify `config.py` to adjust the following:
 
 - **Download directory**: Path to save downloaded audio files.
 - **Audio quality settings**: Set preferred audio formats or bitrate.
-- **Logging options**: Configure logging levels and output locations.
 
 Example `config.py` snippet:
 ```python
-DOWNLOAD_DIR = "downloads/"
+# Configuration
+DOWNLOAD_DIR = Path("~/Desktop/musics/").expanduser()
 AUDIO_FORMAT = "mp3"
-LOG_LEVEL = "INFO"
+AUDIO_QUALITY = "192"
 ```
 
 ## Testing
