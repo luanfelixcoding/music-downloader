@@ -11,12 +11,13 @@ def setup_logger(log_file: str = "logs/downloader.log") -> logging.Logger:
     Returns:
         Logger instance.
     """
-    logger = logging.getLogger("MusicDownloaderLogger")
+    logger = logging.getLogger("MusicDownloader")
     logger.setLevel(logging.INFO)
 
     # File handler
     file_handler = logging.FileHandler(log_file)
-    file_handler.setFormatter("%(asctime)s - %(levelname)s - %(message)s")
+    file_handler.setFormatter(logging.Formatter(
+        "%(asctime)s - %(levelname)s - %(message)s"))
 
     # Console handler
     console_handler = logging.StreamHandler()
