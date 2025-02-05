@@ -20,10 +20,10 @@ def setup_logger(log_file: str = "logs/downloader.log") -> logging.Logger:
         "%(asctime)s - %(levelname)s - %(message)s"))
 
     # Console handler
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(logging.Formatter("%(message)s"))
+    # console_handler = logging.StreamHandler()
+    # console_handler.setFormatter(logging.Formatter("%(message)s"))
 
     logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    # logger.addHandler(console_handler)
 
     return logger
