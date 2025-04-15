@@ -10,7 +10,7 @@ logger = setup_logger()
 async def main() -> None:
     """Main entry point of the application"""
     try:
-        songs = input("Enter song names (comma-separated): ").strip()
+        songs = input("Enter song names separated by commas (e.g., Shape of You, Blinding Lights):\n> ").strip()
         if not songs:
             raise ValueError("No songs provided")
         song_list = format_song_list(songs)

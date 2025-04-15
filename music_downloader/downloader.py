@@ -25,10 +25,12 @@ class MusicDownloader():
             try:
                 if total_bytes > 0:
                     percent = (downloaded_bytes / total_bytes) * 100
-                    print(f"\rProgress: {percent:.2f} ETA: {eta:.2f}s", end="")
+                    eta = d.get('eta')
+                    eta_display = f"{eta:.2f}s" if isinstance(eta, (int, float)) else "N/A"
+                    
+                    print(f"\rProgress: {percent:.2f}% ETA: {eta_display}s", end="")
             except Exception as calculation_error:
-                logger.warning(f"Error in progress calculation: {
-                               calculation_error}")
+                logger.warning(f"Error in progress calculation: {calculation_error}")
 
         elif d['status'] == 'finished':
             print("\nDownload Complete!")
