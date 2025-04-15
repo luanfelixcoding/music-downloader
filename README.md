@@ -54,18 +54,23 @@ music_downloader/
    pip install -r requirements.txt
    ```
 
+5. **Update Package**:
+   ```bash
+   pip install -U yt-dlp
+   ```
+
 ## Usage
 
 1. **Configuration**:
    Update the `music_downloader/config.py` file to customize download settings, such as file paths and audio quality.
 
-2. **Run the Main file**:
+2. **File Management**:
+   Use `file_manager.py` to organize downloaded files or clean up directories.
+   
+3. **Run the Main file**:
    ```bash
    python main.py
    ```
-
-3. **File Management**:
-   Use `file_manager.py` to organize downloaded files or clean up directories.
 
 ## Configuration
 
