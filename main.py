@@ -1,6 +1,11 @@
-def main():
-    print("Hello from music-downloader!")
+from ui.app import MusicDownloaderApp
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Function to initialize and run the entire application."""
+    app = MusicDownloaderApp()
+    app.mainloop()
+
+
+if __name__ == '__main__':
     main()
