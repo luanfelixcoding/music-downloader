@@ -78,7 +78,7 @@ class MusicDownloaderApp(ctk.CTk):
             self.status_log.insert("end", f"{message}\n\n")
             self.status_log.configure(state="disabled")
             self.status_log.see("end")
-        # Use after() to ensure UI updates happen on the main thread
+        # * RECOMMENDATION: Use function after() to ensure UI updates happen on the main thread
         self.after(0, _log)
 
     def update_progress(self, progress_value):
@@ -146,14 +146,14 @@ class MusicDownloaderApp(ctk.CTk):
         else:
             self.log_message(f"Starting download for: {songs[0]}")
 
-        # --- Get settings from UI ---
+        # ? Get settings from UI
         settings = {
             "format": self.format_menu.get(),
             "quality": self.quality_menu.get(),
             "path": self.download_path.get()
         }
 
-        # --- Create downloader instance ---
+        # ? Create downloader instance
         downloader = Downloader(
             songs=songs,
             settings=settings,
@@ -162,7 +162,7 @@ class MusicDownloaderApp(ctk.CTk):
             completion_callback=self.on_download_complete
         )
 
-        # --- Run download in a separate thread ---
+        # ? Run download in a separate thread
         download_thread = threading.Thread(target=downloader.start)
         download_thread.start()
 

@@ -26,7 +26,7 @@ def create_settings_frame(parent, path_var, path_command):
     settings_frame.grid(row=1, column=0, padx=20, pady=10, sticky="ew")
     settings_frame.grid_columnconfigure((0, 1, 2), weight=1)
 
-    # Audio Format
+    # ? Audio Format
     format_label = ctk.CTkLabel(
         settings_frame, text="Audio Format:", font=ctk.CTkFont(slant="roman", size=15))
     format_label.grid(row=0, column=0, padx=10, pady=10, sticky="w")
@@ -34,7 +34,7 @@ def create_settings_frame(parent, path_var, path_command):
                                     "mp3", "m4a", "wav", "flac"], font=ctk.CTkFont(size=13))
     format_menu.grid(row=1, column=0, padx=5, pady=5, sticky="ew")
 
-    # Audio Quality
+    # ? Audio Quality
     quality_label = ctk.CTkLabel(
         settings_frame, text="Audio Quality:", font=ctk.CTkFont(size=15))
     quality_label.grid(row=0, column=1, padx=10, pady=10, sticky="w")
@@ -42,7 +42,7 @@ def create_settings_frame(parent, path_var, path_command):
                                      "Best (320k)", "Standard (192k)", "Low (128k)"], font=ctk.CTkFont(size=13))
     quality_menu.grid(row=1, column=1, padx=10, pady=5, sticky="ew")
 
-    # Download Path
+    # ? Download Path
     path_button = ctk.CTkButton(settings_frame, text="Choose Download Folder",
                                 command=path_command, font=ctk.CTkFont(size=14))
     path_button.grid(row=0, column=2, padx=10, pady=10, sticky="ew")

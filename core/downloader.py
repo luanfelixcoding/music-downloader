@@ -7,7 +7,7 @@ from .config import ydl_opts, quality_options
 
 
 class Downloader:
-    """Class to acquire all the download logic. Central class."""
+    """Class that acquires all the download logic. Central class."""
 
     def __init__(self, songs, settings, progress_callback, log_callback, completion_callback):
         self.songs = songs
