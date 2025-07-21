@@ -57,7 +57,7 @@ music-downloader/
 
 5. **Install Dependencies**:
    ```
-   uv pip install .  # Install your project as a pyproject package + dependencies
+   uv pip install -r pyproject.toml  # Install your project as a pyproject package + dependencies
    ```
 
 6. **Update Package** (if necessary):
