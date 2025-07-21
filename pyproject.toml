@@ -1,11 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "music-downloader"
 version = "0.1.0"
 description = "An intelligent music downloader with a graphical interface using yt-dlp."
 readme = "README.md"
 requires-python = ">=3.12"
+license = { text = "MIT" }
+
 dependencies = [
     "customtkinter",
     "openpyxl",
-    "yt-dlp"
+    "yt-dlp",
 ]
+
+[tool.setuptools]
+packages = { find = {} }
